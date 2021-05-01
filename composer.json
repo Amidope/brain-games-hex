@@ -1,0 +1,15 @@
+{
+    "name": "hexlet/code",
+    "description": "php-game",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Amidope",
+            "email": "nozsen@mail.ru"
+        }
+    ],
+    "bin": [
+		"bin/brain-games"
+    ]
+}
