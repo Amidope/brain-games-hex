@@ -1,0 +1,9 @@
+name: "Linter"
+on: [push]
+jobs:
+  phpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: composer -v
+      - run: composer exec --verbose phpcs -- --standard=PSR12 src bin
