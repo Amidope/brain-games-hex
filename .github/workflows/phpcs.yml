@@ -6,4 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1      
       - run: composer install
-      - run: composer exec --verbose phpcs -d memory_limit=200M 
+      - run: php -d memory_limit=-1
+      - run: make lint
