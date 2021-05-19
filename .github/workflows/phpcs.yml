@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1      
       - run: composer install
-      - run: composer exec --verbose phpcs -d memory_limit=200M -- --standard=PSR12 src bin
+      - run: composer exec --verbose phpcs -d memory_limit=200M 
