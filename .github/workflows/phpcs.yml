@@ -4,7 +4,6 @@ jobs:
   phpcs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: php -v
+      - uses: actions/checkout@v1      
       - run: composer install
-      - run: make lint
+      - run: composer exec --verbose phpcs -d memory_limit=200M -- --standard=PSR12 src bin
