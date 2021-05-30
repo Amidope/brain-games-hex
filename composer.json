@@ -1,11 +1,11 @@
 {
-    "name": "hexlet/brain-games",
+    "name": "amidope/brain-games-hex",
     "description": "php-game",
-    "type": "project",
+    "type": "cli-game",
     "license": "MIT",
     "authors": [
         {
-            "name": "Amidope",
+            "name": "amidope",
             "email": "nozsen@mail.ru"
         }
     ],
