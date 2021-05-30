@@ -6,3 +6,6 @@
 
 ### Linter status:
 [![Linter Status](https://github.com/Amidope/brain-games-hex/actions/workflows/phpcs.yml/badge.svg)](https://github.com/Amidope/brain-games-hex/actions/workflows/phpcs.yml)
+
+### asciinema example:
+[![asciicast](https://asciinema.org/a/amEZBQs0swmNAbsUu13EYWVbU.svg)](https://asciinema.org/a/amEZBQs0swmNAbsUu13EYWVbU)
