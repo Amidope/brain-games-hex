@@ -30,7 +30,7 @@ for ($numberOfQuestions=0; $numberOfQuestions < 3; $numberOfQuestions++) {
     }
 
     line("Question: {$randomNumber}");
-    $playerAnswer = prompt('Your answer:');
+    $playerAnswer = prompt('Your answer');
 
     if ($playerAnswer == $correctAnswer) {
         line('Correct!');
