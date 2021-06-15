@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\Engine\greeting;
+use function Brain\Games\Engine\question;
+use function Brain\Games\Engine\concratulations;
+use function Brain\Games\Engine\answerCheck;
+
+$playerName = greeting();
+line('Answer "yes" if the number is even, otherwise answer "no".');
+
+for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
+    $randomNumber = rand(0, 100);
+    if ($randomNumber % 2 == 0) {
+        $correctAnswer = "yes";
+    } else {
+        $correctAnswer = "no";
+    }
+
+    $playerAnswer = question($randomNumber);
+    $breakLoop = answerCheck($playerAnswer, $correctAnswer, $playerName);
+    if ($breakLoop == true) {
+        break;
+    }
+    // $breakLoop ? break;
+}
+
+concratulations($numberOfQuestions, $playerName);

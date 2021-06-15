@@ -10,12 +10,12 @@
     ],
     "autoload": {
     	"files": [
-    		"src/Cli.php"
+    		"src/Engine.php"
     	]
     },
     "bin": [
-		"bin/brain-games",
-        "bin/brain-even"
+		"src/Games/brain-games",
+        "src/Games/brain-even"
     ],
     "require": {
         "wp-cli/php-cli-tools": "^0.11.12"
