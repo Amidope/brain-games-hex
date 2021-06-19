@@ -16,9 +16,11 @@ use function Brain\Games\Engine\greeting;
 use function Brain\Games\Engine\question;
 use function Brain\Games\Engine\concratulations;
 use function Brain\Games\Engine\answerCheck;
+use function Brain\Games\Engine\add;
 
 $playerName = greeting();
 line('Answer "yes" if the number is even, otherwise answer "no".');
+
 
 for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
     $randomNumber = rand(0, 100);
