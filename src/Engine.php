@@ -37,3 +37,34 @@ function answerCheck($playerAnswer, $correctAnswer, $playerName)
         return true;
     }
 }
+
+function resultArray($firstNumber, $secondNumber)
+{
+    if (!function_exists('Brain\Games\Engine\add')) {
+        function add($firstNumber, $secondNumber)
+        {
+            return [$firstNumber + $secondNumber, "$firstNumber + $secondNumber"];
+        }
+    }
+
+    if (!function_exists('Brain\Games\Engine\subtract')) {
+        function subtract($firstNumber, $secondNumber)
+        {
+            return [$firstNumber - $secondNumber, "$firstNumber - $secondNumber"];
+        }
+    }
+
+    if (!function_exists('Brain\Games\Engine\multiply')) {
+        function multiply($firstNumber, $secondNumber)
+        {
+            return [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
+        }
+    }
+
+    $keysOfResultArr = ["resultValue", "expression"];
+    $operators = ["add", "subtract", "multiply"];     
+    $arrWithoutKeys = call_user_func_array("Brain\Games\Engine\\" . $operators[array_rand($operators)], [$firstNumber, $secondNumber]);
+    $resultArr = array_combine($keysOfResultArr, $arrWithoutKeys);
+
+    return $resultArr;
+}
