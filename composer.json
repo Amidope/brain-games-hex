@@ -14,7 +14,7 @@
     	]
     },
     "bin": [
-		"src/Games/brain-games",
+		"src/Games/brain-calc",
         "src/Games/brain-even"
     ],
     "require": {

@@ -1,3 +1,40 @@
 #!/usr/bin/env php
 
 <?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\Engine\greeting;
+use function Brain\Games\Engine\question;
+use function Brain\Games\Engine\concratulations;
+use function Brain\Games\Engine\answerCheck;
+use function Brain\Games\Engine\resultArray;
+
+$playerName = greeting();
+
+for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
+
+    $firstNumber = rand(0, 5);
+    $secondNumber = rand(0, 5);
+    $resultArr = resultArray($firstNumber, $secondNumber);
+    $correctAnswer = $resultArr['resultValue'];
+    $expression = $resultArr['expression'];
+
+    $playerAnswer = question($expression);
+
+    $breakLoop = answerCheck($playerAnswer, $correctAnswer, $playerName);
+    if ($breakLoop == true) {
+        break;
+    }
+    // $breakLoop ? break;
+}
+
+concratulations($numberOfQuestions, $playerName);
