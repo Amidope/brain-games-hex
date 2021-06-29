@@ -62,8 +62,9 @@ function resultArray($firstNumber, $secondNumber)
     }
 
     $keysOfResultArr = ["resultValue", "expression"];
-    $operators = ["add", "subtract", "multiply"];     
-    $arrWithoutKeys = call_user_func_array("Brain\Games\Engine\\" . $operators[array_rand($operators)], [$firstNumber, $secondNumber]);
+    $operators = ["add", "subtract", "multiply"];
+    $arrWithoutKeys = call_user_func_array("Brain\Games\Engine\\" .
+        $operators[array_rand($operators)], [$firstNumber, $secondNumber]);
     $resultArr = array_combine($keysOfResultArr, $arrWithoutKeys);
 
     return $resultArr;
