@@ -19,6 +19,7 @@ use function Brain\Games\Engine\answerCheck;
 use function Brain\Games\Engine\resultArray;
 
 $playerName = greeting();
+line('What is the result of the expression?');
 
 for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
 
