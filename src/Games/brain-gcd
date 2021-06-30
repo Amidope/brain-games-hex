@@ -20,6 +20,7 @@ use function Brain\Games\Engine\resultArray;
 use function Brain\Games\Engine\gcd;
 
 $playerName = greeting();
+
 line ('Find the greatest common divisor of given numbers.');
 
 for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
