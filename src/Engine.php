@@ -69,3 +69,7 @@ function resultArray($firstNumber, $secondNumber)
 
     return $resultArr;
 }
+
+function gcd($a,$b) {
+    return ($a % $b) ? gcd($b,$a % $b) : $b;
+}
