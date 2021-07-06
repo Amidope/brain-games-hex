@@ -16,7 +16,7 @@ use function Brain\Games\Engine\greeting;
 use function Brain\Games\Engine\question;
 use function Brain\Games\Engine\concratulations;
 use function Brain\Games\Engine\answerCheck;
-use function Brain\Games\Engine\resultArray;
+use function Brain\Games\Engine\resultArrayCalc;
 
 $playerName = greeting();
 line('What is the result of the expression?');
@@ -25,7 +25,7 @@ for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
 
     $firstNumber = rand(0, 5);
     $secondNumber = rand(0, 5);
-    $resultArr = resultArray($firstNumber, $secondNumber);
+    $resultArr = resultArrayCalc($firstNumber, $secondNumber);
     $correctAnswer = $resultArr['resultValue'];
     $expression = $resultArr['expression'];
 

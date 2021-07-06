@@ -38,7 +38,7 @@ function answerCheck($playerAnswer, $correctAnswer, $playerName)
     }
 }
 
-function resultArray($firstNumber, $secondNumber)
+function resultArrayCalc($firstNumber, $secondNumber)
 {
     if (!function_exists('Brain\Games\Engine\add')) {
         function add($firstNumber, $secondNumber)
@@ -73,4 +73,30 @@ function resultArray($firstNumber, $secondNumber)
 function gcd($a, $b)
 {
     return ($a % $b) ? gcd($b, $a % $b) : $b;
+}
+
+function progression()
+{
+    $progressionLength = rand(5, 10);
+    $progressionArr = [];
+    $startNumb = rand(1, 100);
+    $addition = rand(2, 5);
+    for ($i = 0; $i < $progressionLength; $i++) {
+        $number = $startNumb + $addition;
+        
+        $number = $number + $adddition;
+        $progressionArr[] = $number;
+    }
+
+    $correctAnswer = $progressionArr[array_rand($progressionArr)];
+    $expression = "";
+
+    foreach ($progressionArr as $value) {
+        if ($value = $correctAnswer) {
+            $expression = "{$expression} ..";
+        } else {
+            $expression = "{$expression} {$value}";
+        }
+    }
+    return $progressionResult = [$expression, $correctAnswer];
 }

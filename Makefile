@@ -12,3 +12,5 @@ brain-calc:
 	./src/Games/brain-calc
 brain-gcd:
 	./src/Games/brain-gcd
+brain-progression:
+	./src/Games/brain-progression
