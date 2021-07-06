@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\Engine\greeting;
+use function Brain\Games\Engine\question;
+use function Brain\Games\Engine\concratulations;
+use function Brain\Games\Engine\answerCheck;
+use function Brain\Games\Engine\progression;
+
+$playerName = greeting();
+
+line ('What number is missing in the progression?');
+
+for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
+    $progressionResult = progression();
+    $expression = $progressionResult[0];
+    $correctAnswer = $progressionResult[1];
+    $playerAnswer = question($expression);
+
+    $breakLoop = answerCheck($playerAnswer, $correctAnswer, $playerName);
+    if ($breakLoop == true) {
+        break;
+    }
+}
+
+concratulations($numberOfQuestions, $playerName);
