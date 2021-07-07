@@ -83,7 +83,7 @@ function progression()
     $addition = rand(2, 5);
     for ($i = 0; $i < $progressionLength; $i++) {
         $number = $startNumb + $addition;
-        
+
         $number = $number + $adddition;
         $progressionArr[] = $number;
     }
