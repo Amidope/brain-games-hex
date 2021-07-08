@@ -78,25 +78,19 @@ function gcd($a, $b)
 function progression()
 {
     $progressionLength = rand(5, 10);
-    $progressionArr = [];
-    $startNumb = rand(1, 100);
+    $startNumber = rand(1, 100);
     $addition = rand(2, 5);
-    for ($i = 0; $i < $progressionLength; $i++) {
-        $number = $startNumb + $addition;
+    $nextNumber = 0;
 
-        $number = $number + $adddition;
-        $progressionArr[] = $number;
-    }
+    $progressionArr = range($startNumber, $startNumber + $progressionLength * $addition, $addition);
 
-    $correctAnswer = $progressionArr[array_rand($progressionArr)];
+    $answerKey = array_rand($progressionArr);
+    $correctAnswer = $progressionArr[$answerKey];
     $expression = "";
+    $progressionArr[$answerKey] = "..";
 
     foreach ($progressionArr as $value) {
-        if ($value = $correctAnswer) {
-            $expression = "{$expression} ..";
-        } else {
-            $expression = "{$expression} {$value}";
-        }
+        $expression = implode(" ", $progressionArr);
     }
     return $progressionResult = [$expression, $correctAnswer];
 }
