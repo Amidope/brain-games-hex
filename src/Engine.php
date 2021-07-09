@@ -33,7 +33,7 @@ function answerCheck($playerAnswer, $correctAnswer, $playerName)
         line('Correct!');
     } else {
         line("'{$playerAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-        line("Let's try again, $playerName");
+        line("Let's try again, $playerName!");
         return true;
     }
 }
