@@ -18,7 +18,8 @@
         "src/Games/brain-even",
         "src/Games/brain-gcd",
         "src/Games/brain-progression",
-        "src/Games/brain-prime"
+        "src/Games/brain-prime",
+        "bin/brain-games"
     ],
     "require": {
         "wp-cli/php-cli-tools": "^0.11.12"
