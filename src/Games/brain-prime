@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\Engine\greeting;
+use function Brain\Games\Engine\question;
+use function Brain\Games\Engine\concratulations;
+use function Brain\Games\Engine\answerCheck;
+use function Brain\Games\Engine\answerPrime;
+
+$playerName = greeting();
+
+line('Answer "yes" if given number is prime. Otherwise answer "no".');
+
+for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
+    $question = rand(0, 13);
+    $correctAnswer = answerPrime($question);
+
+    $playerAnswer = question($question);
+
+    $breakLoop = answerCheck($playerAnswer, $correctAnswer, $playerName);
+    if ($breakLoop == true) {
+        break;
+    }
+}
+
+concratulations($numberOfQuestions, $playerName);
+
