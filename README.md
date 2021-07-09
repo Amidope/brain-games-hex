@@ -2,3 +2,9 @@
 
 ### Installation & gameplay
 <a href="https://asciinema.org/a/424247?autoplay=1" target="_blank"><img src="https://asciinema.org/a/424247.svg" /></a>
+
+<a href="https://asciinema.org/a/424694?autoplay=1" target="_blank"><img src="https://asciinema.org/a/424694.svg" /></a>
+
+<a href="https://asciinema.org/a/424697?autoplay=1" target="_blank"><img src="https://asciinema.org/a/424697.svg" /></a>
+
+<a href="https://asciinema.org/a/424700?autoplay=1" target="_blank"><img src="https://asciinema.org/a/424700.svg" /></a>
