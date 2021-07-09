@@ -14,3 +14,5 @@ brain-gcd:
 	./src/Games/brain-gcd
 brain-progression:
 	./src/Games/brain-progression
+brain-prime:
+	./src/Games/brain-prime

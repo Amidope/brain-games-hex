@@ -35,7 +35,6 @@ for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
     if ($breakLoop == true) {
         break;
     }
-    // $breakLoop ? break;
 }
 
 concratulations($numberOfQuestions, $playerName);

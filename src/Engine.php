@@ -94,3 +94,27 @@ function progression()
     }
     return $progressionResult = [$expression, $correctAnswer];
 }
+
+function answerPrime($number)
+{
+    if (!function_exists("Brain\Games\Engine\isPrime")) {
+        function isPrime($number)
+        {
+            if ($number < 2) {
+                return false;
+            }
+            for ($i = 2; $i < $number; $i++) { 
+                if ($number % $i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    if (call_user_func("Brain\Games\Engine\isPrime", $number)) {
+        return "yes";
+    } else {
+        return "no";
+    }
+}
