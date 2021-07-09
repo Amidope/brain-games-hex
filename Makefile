@@ -16,3 +16,5 @@ brain-progression:
 	./src/Games/brain-progression
 brain-prime:
 	./src/Games/brain-prime
+brain-games:
+	./bin/brain-games
