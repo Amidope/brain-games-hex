@@ -70,7 +70,13 @@ function resultArrayCalc(int $firstNumber, int $secondNumber): array
 
 function gcd(int $a, int $b): int
 {
-    return ($a % $b) ? gcd($b, $a % $b) : $b;
+    if ($a == 0 || $b == 0)
+        return abs( max(abs($a), abs($b)) );
+       
+    $r = $a % $b;
+    return ($r != 0) ?
+        gcd($b, $r) :
+        abs($b);
 }
 
 function progression(): array
@@ -97,13 +103,13 @@ function answerPrime(int $number): string
 {
     if (!function_exists("Brain\Games\Engine\isPrime")) {
 
-        function isPrime(int $number): int
+        function isPrime(int $number): bool
         {
             if ($number < 2) {
                 return false;
             }
             for ($i = 2; $i < $number; $i++) {
-                if ($number % $i == 0) {
+                if ($number % $i === 0) {
                     return false;
                 }
             }
