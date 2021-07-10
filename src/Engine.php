@@ -70,13 +70,11 @@ function resultArrayCalc(int $firstNumber, int $secondNumber): array
 
 function gcd(int $a, int $b): int
 {
-    if ($a == 0 || $b == 0)
-        return abs( max(abs($a), abs($b)) );
-       
+    if ($a == 0 || $b == 0) {
+        return abs(max(abs($a), abs($b)));
+    }
     $r = $a % $b;
-    return ($r != 0) ?
-        gcd($b, $r) :
-        abs($b);
+    return ($r != 0) ? gcd($b, $r) : abs($b);
 }
 
 function progression(): array
@@ -102,8 +100,7 @@ function progression(): array
 function getPrimeAnswer($number): string
 {
 
-    $isPrime = function($number): bool
-    {
+    $isPrime = function ($number): bool {
         if ($number < 2) {
             return false;
         }
