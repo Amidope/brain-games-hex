@@ -16,7 +16,7 @@ use function Brain\Games\Engine\greeting;
 use function Brain\Games\Engine\question;
 use function Brain\Games\Engine\concratulations;
 use function Brain\Games\Engine\isCorrect;
-use function Brain\Games\Engine\answerPrime;
+use function Brain\Games\Engine\getPrimeAnswer;
 
 $playerName = greeting();
 
@@ -24,7 +24,8 @@ line('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
     $question = rand(0, 13);
-    $correctAnswer = answerPrime($question);
+
+    $correctAnswer = getPrimeAnswer($question);
 
     $playerAnswer = question($question);
 

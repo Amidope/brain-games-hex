@@ -99,25 +99,23 @@ function progression(): array
     return $progressionResult = [$expression, $correctAnswer];
 }
 
-function answerPrime(int $number): string
+function getPrimeAnswer($number): string
 {
-    if (!function_exists("Brain\Games\Engine\isPrime")) {
 
-        function isPrime(int $number): bool
-        {
-            if ($number < 2) {
+    $isPrime = function($number): bool
+    {
+        if ($number < 2) {
+            return false;
+        }
+        for ($i = 2; $i < $number; $i++) {
+            if ($number % $i === 0) {
                 return false;
             }
-            for ($i = 2; $i < $number; $i++) {
-                if ($number % $i === 0) {
-                    return false;
-                }
-            }
-            return true;
         }
-    }
+        return true;
+    };
 
-    if (call_user_func("Brain\Games\Engine\isPrime", $number)) {
+    if ($isPrime($number)) {
         return "yes";
     } else {
         return "no";
