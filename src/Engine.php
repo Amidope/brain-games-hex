@@ -55,7 +55,7 @@ function resultArrayCalc(int $firstNumber, int $secondNumber): array
     }
 
     if (!function_exists('Brain\Games\Engine\multiply')) {
-        function multiply((int $firstNumber, int $secondNumber): array
+        function multiply(int $firstNumber, int $secondNumber): array
         {
             return [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
         }
