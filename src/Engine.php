@@ -42,7 +42,7 @@ function resultArrayCalc(int $firstNumber, int $secondNumber): array
     $keysOfResultArr = ["correctAnswer", "expression"];
     $operators = ['add', 'subtract', 'multiply'];
     $randomOperator = array_rand(array_flip($operators));
-
+    $resultWithoutKeys = [];
     switch ($randomOperator) {
         case 'add':
             $resultWithoutKeys = [$firstNumber + $secondNumber, "$firstNumber + $secondNumber"];
