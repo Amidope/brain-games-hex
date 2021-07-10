@@ -93,9 +93,10 @@ function progression(): array
     return $progressionResult = [$expression, $correctAnswer];
 }
 
-function answerPrime(int $number): int 
+function answerPrime(int $number): string
 {
     if (!function_exists("Brain\Games\Engine\isPrime")) {
+
         function isPrime(int $number): int
         {
             if ($number < 2) {
