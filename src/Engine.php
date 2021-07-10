@@ -13,7 +13,7 @@ function greeting(): string
     return $playerName;
 }
 
-function question(string $question): string
+function getPlayersAnswer(string $question): string
 {
     line("Question: {$question}");
     $playerAnswer = prompt('Your answer');
@@ -38,32 +38,26 @@ function isCorrect(string $playerAnswer, string $correctAnswer): bool
 
 function resultArrayCalc(int $firstNumber, int $secondNumber): array
 {
-    if (!function_exists('Brain\Games\Engine\add')) {
-        function add(int $firstNumber, int $secondNumber): array
-        {
-            return [$firstNumber + $secondNumber, "$firstNumber + $secondNumber"];
-        }
-    }
 
-    if (!function_exists('Brain\Games\Engine\subtract')) {
-        function subtract(int $firstNumber, int $secondNumber): array
-        {
-            return [$firstNumber - $secondNumber, "$firstNumber - $secondNumber"];
-        }
-    }
+    $keysOfResultArr = ["correctAnswer", "expression"];
+    $operators = ['add', 'subtract', 'multiply'];
+    $randomOperator = array_rand(array_flip($operators));
 
-    if (!function_exists('Brain\Games\Engine\multiply')) {
-        function multiply(int $firstNumber, int $secondNumber): array
-        {
-            return [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
-        }
-    }
+    switch ($randomOperator) {
+        case 'add':
+            $resultWithoutKeys = [$firstNumber + $secondNumber, "$firstNumber + $secondNumber"];
+            break;
+        
+        case 'subtract':
+        $resultWithoutKeys = [$firstNumber - $secondNumber, "$firstNumber - $secondNumber"];
+            break;
 
-    $keysOfResultArr = ["resultValue", "expression"];
-    $operators = ["add", "subtract", "multiply"];
-    $arrWithoutKeys = call_user_func_array("Brain\Games\Engine\\" .
-        $operators[array_rand($operators)], [$firstNumber, $secondNumber]);
-    $resultArr = array_combine($keysOfResultArr, $arrWithoutKeys);
+        case 'multiply':
+        $resultWithoutKeys = [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
+            break;
+    }
+    
+    $resultArr = array_combine($keysOfResultArr, $resultWithoutKeys);
 
     return $resultArr;
 }
@@ -97,7 +91,7 @@ function progression(): array
     return $progressionResult = [$expression, $correctAnswer];
 }
 
-function getPrimeAnswer($number): string
+function getPrimeAnswer(int $number): string
 {
 
     $isPrime = function ($number): bool {

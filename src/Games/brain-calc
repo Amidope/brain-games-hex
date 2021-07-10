@@ -13,7 +13,7 @@ if (file_exists($autoloadPath1)) {
 use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\greeting;
-use function Brain\Games\Engine\question;
+use function Brain\Games\Engine\getPlayersAnswer;
 use function Brain\Games\Engine\concratulations;
 use function Brain\Games\Engine\resultArrayCalc;
 use function Brain\Games\Engine\isCorrect;
@@ -27,10 +27,10 @@ for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
     $firstNumber = rand(0, 5);
     $secondNumber = rand(0, 5);
     $resultArr = resultArrayCalc($firstNumber, $secondNumber);
-    $correctAnswer = $resultArr['resultValue'];
+    $correctAnswer = $resultArr['correctAnswer'];
     $expression = $resultArr['expression'];
 
-    $playerAnswer = question($expression);
+    $playerAnswer = getPlayersAnswer($expression);
 
     if (isCorrect($playerAnswer, $correctAnswer)) {
         line('Correct!');

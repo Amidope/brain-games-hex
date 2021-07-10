@@ -13,7 +13,7 @@ if (file_exists($autoloadPath1)) {
 use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\greeting;
-use function Brain\Games\Engine\question;
+use function Brain\Games\Engine\getPlayersAnswer;
 use function Brain\Games\Engine\concratulations;
 use function Brain\Games\Engine\isCorrect;
 use function Brain\Games\Engine\resultArray;
@@ -29,7 +29,7 @@ for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
     $secondNumber = rand(1, 100);
     $correctAnswer = gcd($firstNumber, $secondNumber);
     $expression = "$firstNumber $secondNumber";
-    $playerAnswer = question($expression);
+    $playerAnswer = getPlayersAnswer($expression);
 
     if (isCorrect($playerAnswer, $correctAnswer)) {
         line('Correct!');
