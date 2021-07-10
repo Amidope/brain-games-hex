@@ -15,7 +15,7 @@ use function cli\prompt;
 use function Brain\Games\Engine\greeting;
 use function Brain\Games\Engine\question;
 use function Brain\Games\Engine\concratulations;
-use function Brain\Games\Engine\answerCheck;
+use function Brain\Games\Engine\isCorrect;
 use function Brain\Games\Engine\answerPrime;
 
 $playerName = greeting();
@@ -28,8 +28,11 @@ for ($numberOfQuestions = 0; $numberOfQuestions < 3; $numberOfQuestions++) {
 
     $playerAnswer = question($question);
 
-    $breakLoop = answerCheck($playerAnswer, $correctAnswer, $playerName);
-    if ($breakLoop == true) {
+    if (isCorrect($playerAnswer, $correctAnswer)) {
+        line('Correct!');
+    } else {
+        line("'{$playerAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+        line("Let's try again, $playerName!");
         break;
     }
 }

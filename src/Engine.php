@@ -20,21 +20,19 @@ function question(string $question): string
     return $playerAnswer;
 }
 
-function concratulations(int $numberOfQuestions, string $playerName): string
+function concratulations(int $numberOfQuestions, string $playerName): void
 {
     if ($numberOfQuestions == 3) {
         line("Congratulations, {$playerName}!");
     }
 }
 
-function answerCheck(string $playerAnswer, string $correctAnswer, string $playerName): bool
+function isCorrect(string $playerAnswer, string $correctAnswer): bool
 {
     if ($playerAnswer == $correctAnswer) {
-        line('Correct!');
-    } else {
-        line("'{$playerAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-        line("Let's try again, $playerName!");
         return true;
+    } else {
+        return false;
     }
 }
 
