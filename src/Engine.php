@@ -13,14 +13,14 @@ function greeting(): string
     return $playerName;
 }
 
-function question($question)
+function question(string $question): string
 {
     line("Question: {$question}");
     $playerAnswer = prompt('Your answer');
     return $playerAnswer;
 }
 
-function concratulations($numberOfQuestions, $playerName)
+function concratulations(int $numberOfQuestions, string $playerName): string
 {
     if ($numberOfQuestions == 3) {
         line("Congratulations, {$playerName}!");
