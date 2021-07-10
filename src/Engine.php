@@ -27,7 +27,7 @@ function concratulations(int $numberOfQuestions, string $playerName): string
     }
 }
 
-function answerCheck($playerAnswer, $correctAnswer, $playerName)
+function answerCheck(string $playerAnswer, string $correctAnswer, string $playerName): bool
 {
     if ($playerAnswer == $correctAnswer) {
         line('Correct!');
@@ -38,24 +38,24 @@ function answerCheck($playerAnswer, $correctAnswer, $playerName)
     }
 }
 
-function resultArrayCalc($firstNumber, $secondNumber)
+function resultArrayCalc(int $firstNumber, int $secondNumber): array
 {
     if (!function_exists('Brain\Games\Engine\add')) {
-        function add($firstNumber, $secondNumber)
+        function add(int $firstNumber, int $secondNumber): array
         {
             return [$firstNumber + $secondNumber, "$firstNumber + $secondNumber"];
         }
     }
 
     if (!function_exists('Brain\Games\Engine\subtract')) {
-        function subtract($firstNumber, $secondNumber)
+        function subtract(int $firstNumber, int $secondNumber): array
         {
             return [$firstNumber - $secondNumber, "$firstNumber - $secondNumber"];
         }
     }
 
     if (!function_exists('Brain\Games\Engine\multiply')) {
-        function multiply($firstNumber, $secondNumber)
+        function multiply((int $firstNumber, int $secondNumber): array
         {
             return [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
         }
@@ -70,12 +70,12 @@ function resultArrayCalc($firstNumber, $secondNumber)
     return $resultArr;
 }
 
-function gcd($a, $b)
+function gcd(int $a, int $b): int
 {
     return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 
-function progression()
+function progression(): array
 {
     $progressionLength = rand(5, 10);
     $startNumber = rand(1, 100);
@@ -95,10 +95,10 @@ function progression()
     return $progressionResult = [$expression, $correctAnswer];
 }
 
-function answerPrime($number)
+function answerPrime(int $number): int 
 {
     if (!function_exists("Brain\Games\Engine\isPrime")) {
-        function isPrime($number)
+        function isPrime(int $number): int
         {
             if ($number < 2) {
                 return false;
