@@ -47,16 +47,16 @@ function resultArrayCalc(int $firstNumber, int $secondNumber): array
         case 'add':
             $resultWithoutKeys = [$firstNumber + $secondNumber, "$firstNumber + $secondNumber"];
             break;
-        
+
         case 'subtract':
-        $resultWithoutKeys = [$firstNumber - $secondNumber, "$firstNumber - $secondNumber"];
+            $resultWithoutKeys = [$firstNumber - $secondNumber, "$firstNumber - $secondNumber"];
             break;
 
         case 'multiply':
-        $resultWithoutKeys = [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
+            $resultWithoutKeys = [$firstNumber * $secondNumber, "$firstNumber * $secondNumber"];
             break;
     }
-    
+
     $resultArr = array_combine($keysOfResultArr, $resultWithoutKeys);
 
     return $resultArr;
